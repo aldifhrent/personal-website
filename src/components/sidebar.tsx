@@ -10,15 +10,15 @@ import Contacts from "./sections/contacts";
 import DockerMobile from "./docker.mobile";
 import SidebarAside from "./sidebar.aside";
 import Projects from "./sections/projects";
-import { Briefcase, BarChart2, GraduationCap, Phone, ToolCase } from "lucide-react";
+import { BadgeCheck, GraduationCap, Hammer, Mail, FolderKanban } from "lucide-react";
 
 
 export const menu = [
-  { name: "Skills", id: "skills", icon: <ToolCase size={24} /> },
-  { name: "Projects", id: "projects", icon: <Briefcase size={24} /> },
-  { name: "Experience", id: "experience", icon: <BarChart2 size={24} /> },
+  { name: "Skills", id: "skills", icon: <Hammer  size={24} /> },
+  { name: "Projects", id: "projects", icon: <FolderKanban  size={24} /> },
+  { name: "Experience", id: "experience", icon: <BadgeCheck  size={24} /> },
   { name: "Education", id: "education", icon: <GraduationCap size={24} /> },
-  { name: "Contact", id: "contact", icon: <Phone size={24} /> },
+  { name: "Contact", id: "contact", icon: <Mail  size={24} /> },
 ];
 
 export interface SideProps {

@@ -17,13 +17,13 @@ export default function Profile() {
         transition={{ duration: 0.6 }}
       >
         <motion.div
-          className="flex flex-col md:flex-row items-center md:items-start gap-10 border-r-1"
+          className="flex flex-col md:flex-row items-center md:items-start gap-10 "
           initial={{ opacity: 0, y: -20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
         >
           {/* Foto Profil */}
-          <div className="rounded-full overflow-hidden border-2 border-gray-300 dark:border-gray-600">
+          <div className="rounded-full overflow-hidden border-2 border-gray-300 dark:border-gray-600 mt-10">
             <Image
               src="/profile.png"
               alt="Aldi Ahmad Fahrizi Ilmawan"
