@@ -32,13 +32,9 @@ export default function WorkExperienceTimeline() {
         animate={{ opacity: 1 }}
         transition={{ duration: 0.8 }}
       >
-        <h1
-          className="font-bold text-md text-gray-800 dark:text-white mb-8"
-          style={{ fontFamily: "'Courier New', Courier, monospace" }}
-        >
-          Work Experiences
-        </h1>
-
+  <h2 className="text-lg font-bold text-gray-800 dark:text-gray-200 mb-3 font-mono">
+            Work Experiences
+          </h2>
         <ol className="relative border-l border-gray-300 dark:border-gray-700 space-y-12">
           {workExperiences.map((work, index) => (
             <WorkExperienceCard key={work.id} {...work} index={index} />

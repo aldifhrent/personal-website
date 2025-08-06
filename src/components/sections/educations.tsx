@@ -26,9 +26,9 @@ export default function Educations() {
         transition={{ duration: 0.6, ease: [0.25, 0.1, 0.25, 1] }}
       >
         <div className="flex flex-col">
-          <h1 className="font-bold" style={{ fontFamily: "'Courier New', Courier, monospace" }}>
-            Educations
-          </h1>
+  <h2 className="text-lg font-bold text-gray-800 dark:text-gray-200 mb-3 font-mono">
+          Educations
+          </h2>
           <div className="flex flex-col mt-4 gap-5 hover:cursor-pointer">
             {study.map((s) => (
               <EducationsCard

@@ -4,7 +4,7 @@ import SidebarMenu from "@/components/sidebar";
 
 export default function Home() {
   return (
-<main className="min-h-screen flex flex-col overflow-hidden ">
+<main className="min-h-screen flex flex-col overflow-hidden min-w-screen">
   {/* Konten utama */}
   <div className="flex-grow pb-20 md:pb-0">
     <Profile />
@@ -12,8 +12,6 @@ export default function Home() {
       <SidebarMenu />
     </div>
   </div>
-
-  {/* Footer tetap di bawah */}
   <Footer />
 </main>
 

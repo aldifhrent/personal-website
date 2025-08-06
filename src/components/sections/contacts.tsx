@@ -76,8 +76,10 @@ const Contacts = React.forwardRef<HTMLElement>((_, ref) => {
 
   return (
     <section className="" id="contact" ref={ref}>
-      <div className="container mx-auto">
-      
+      <div className="container mx-auto"> 
+          <h2 className="text-lg font-bold text-gray-800 dark:text-gray-200 mb-3 font-mono">
+            Contacts
+          </h2>
         <div className="grid gap-2">
           {contacts.map((contact, index) => {
             const Icon = contact.icon;
