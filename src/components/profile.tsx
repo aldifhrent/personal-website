@@ -86,7 +86,7 @@ export default function Profile() {
 
               {/* Download CV */}
               <motion.a
-                href="/CV_ALDI AHMAD FAHRIZI ILMAWAN.pdf"
+                href="/CV_ALDI%20AHMAD%20FAHRIZI%20ILMAWAN.pdf"
                 download
                 className="flex items-center gap-2 px-4 py-1.5 rounded-full bg-blue-50 dark:bg-blue-900 border border-blue-200 dark:border-blue-700 shadow-sm hover:shadow-md transition text-blue-800 dark:text-blue-100 font-mono"
                 initial={{ opacity: 0 }}
