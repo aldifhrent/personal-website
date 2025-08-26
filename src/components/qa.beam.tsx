@@ -11,7 +11,7 @@ export function QABeam() {
           animate={{ scale: 1, opacity: 1 }}
           transition={{ delay: 0.3, duration: 0.4 }}
         >
-          QA ENGINEER
+          QA Engineer Trainee
         </motion.p>
       </div>
 
