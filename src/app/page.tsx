@@ -8,7 +8,7 @@ export default function Home() {
   return (
     <main className="min-h-screen flex flex-col overflow-x-hidden">
       {/* Konten utama */}
-      <div className="flex justify-end p-1">
+      <div className="container mx-auto p-4 w-full ">
         <ModeToggle/>
       </div>
       <div className="flex-grow pb-20 md:pb-0">

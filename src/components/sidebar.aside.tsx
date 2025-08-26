@@ -1,31 +1,28 @@
-
+// sidebar.aside.tsx
+"use client";
 import { menu, SideProps } from "./sidebar";
-
 
 export default function SidebarAside({ activeSection, setActiveSection }: SideProps) {
   return (
-    <aside className="hidden md:block w-64 shrink-0 border-r pr-4 bg-white dark:bg-gray-900 dark:border-gray-700 transition-colors duration-300">
-      <div className="space-y-6 py-6 px-2">
-        <nav className="flex flex-col gap-2" aria-label="Sidebar navigation">
-          {menu.map((item) => {
-            const isActive = activeSection === item.id;
-            return (
-              <button
-                key={item.id}
-                onClick={() => setActiveSection(item.id)}
-                className={`px-4 py-2 rounded-md text-left font-medium transition-all duration-200 ${
-                  isActive
-                    ? "bg-blue-500 text-white shadow"
-                    : "text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-800"
-                }`}
-                aria-current={isActive ? "page" : undefined}
-              >
-                {item.name}
-              </button>
-            );
-          })}
-        </nav>
-      </div>
+    <aside className="md:w-64">
+      <nav className="sticky top-6 flex md:flex-col gap-2 outline rounded-md p-4">
+        {menu.map((item) => {
+          const isActive = activeSection === item.id;
+          return (
+            <button
+              key={item.id}
+              onClick={() => setActiveSection(item.id)}
+              className={`w-full text-left px-3 py-2 rounded-md text-sm transition-colors duration-150
+                text-gray-700 dark:text-gray-300
+                hover:text-blue-600 dark:hover:text-blue-300
+                ${isActive ? "text-blue-600 dark:text-blue-300 font-semibold" : ""}
+                hover:font-semibold`}
+            >
+              {item.name}
+            </button>
+          );
+        })}
+      </nav>
     </aside>
   );
 }

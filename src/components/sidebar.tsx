@@ -48,7 +48,7 @@ export default function SidebarMenu() {
       />
 
       {/* Main content area */}
-      <main className="flex-1 bg-white dark:bg-gray-900 rounded-xl shadow p-4 min-h-[300px]">
+      <main className="flex-1 bg-white dark:bg-black shadow p-8 h-fit outline rounded-md">
         <AnimatePresence mode="wait">
           <motion.div
             key={activeSection}
