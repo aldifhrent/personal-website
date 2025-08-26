@@ -2,10 +2,16 @@
 "use client";
 import { menu, SideProps } from "./sidebar";
 
-export default function SidebarAside({ activeSection, setActiveSection }: SideProps) {
+export default function SidebarAside({
+  activeSection,
+  setActiveSection,
+}: SideProps) {
   return (
     <aside className="md:w-64">
-      <nav className="sticky top-6 flex md:flex-col gap-2 outline rounded-md p-4">
+      <nav
+        className="sticky top-6 flex flex-col gap-2 outline rounded-md p-4 
+                   min-h-[250px] items-stretch justify-center mx-auto"
+      >
         {menu.map((item) => {
           const isActive = activeSection === item.id;
           return (
