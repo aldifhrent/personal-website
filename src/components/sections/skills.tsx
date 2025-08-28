@@ -52,7 +52,7 @@ const colors = [
 export default function Skills() {
   return (
     <TooltipProvider>
-      <section className="space-y-8">
+      <section className="space-y-8 w-full">
         {/* TECHNICAL SKILLS */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}

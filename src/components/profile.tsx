@@ -8,8 +8,16 @@ import { QABeam } from "./qa.beam";
 import { Download } from "lucide-react"; // gunakan ikon download dari lucide-react
 
 export default function Profile() {
+  const summaries: string[] = [
+    "I am a passionate software engineer with a focus on web development, specializing in building scalable and efficient applications. I love exploring new technologies and continuously improving my skills.",
+    "Junior QA Engineer with hands-on experience in manual and automated testing. Skilled in Playwright, Katalon Studio, and bug tracking with JIRA, ensuring high-quality software delivery.",
+    "Web developer turned QA enthusiast with a strong foundation in JavaScript and React.js. Bringing technical insight and attention to detail to design effective test cases and automation scripts.",
+  ];
+
+  const randomSummary = summaries[Math.floor(Math.random() * summaries.length)];
+  
   return (
-    <section className="py-12 bg-white dark:bg-black">
+    <section className="py-8 bg-white dark:bg-black">
       <motion.div
         className="container mx-auto px-4 w-full"
         initial={{ opacity: 0 }}
@@ -17,13 +25,13 @@ export default function Profile() {
         transition={{ duration: 0.6 }}
       >
         <motion.div
-          className="flex flex-col md:flex-row items-center md:items-start gap-10 "
+          className="flex flex-col md:flex-row items-center md:items-start gap-10  "
           initial={{ opacity: 0, y: -20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
         >
           {/* Foto Profil */}
-          <div className="rounded-full overflow-hidden border-2 border-gray-300 dark:border-gray-600 mt-10">
+          <div className="rounded-full overflow-hidden border-2 border-gray-300 dark:border-gray-600 mt-2 ">
             <Image
               src="/profile.png"
               alt="Aldi Ahmad Fahrizi Ilmawan"
@@ -35,7 +43,7 @@ export default function Profile() {
           </div>
 
           {/* Konten Teks */}
-          <div className="flex flex-col items-center md:items-start text-center md:text-left mt-8">
+          <div className="flex flex-col items-center md:items-start text-center md:text-left mt-2">
             <HyperText
               className="text-4xl md:text-6xl"
               duration={1000}
@@ -50,9 +58,7 @@ export default function Profile() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.7, delay: 0.4 }}
             >
-              I am a passionate software engineer with a focus on web development,
-              specializing in building scalable and efficient applications. I love
-              exploring new technologies and continuously improving my skills.
+             {randomSummary}
             </motion.p>
 
             <motion.div
@@ -94,7 +100,7 @@ export default function Profile() {
                 transition={{ duration: 0.4 }}
               >
                 <Download className="w-4 h-4" />
-                 CV
+                CV
               </motion.a>
             </motion.div>
           </div>
