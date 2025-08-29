@@ -10,29 +10,41 @@ import Contacts from "./sections/contacts";
 import DockerMobile from "./docker.mobile";
 import SidebarAside from "./sidebar.aside";
 import Projects from "./sections/projects";
-import { BadgeCheck, GraduationCap, Hammer, Mail, FolderKanban } from "lucide-react";
-
+import {
+  BadgeCheck,
+  GraduationCap,
+  Hammer,
+  Mail,
+  FolderKanban,
+  Badge,
+} from "lucide-react";
+import Certificates from "./sections/certificates";
 
 export const menu = [
-  { name: "Skills", id: "skills", icon: <Hammer  size={24} /> },
-  { name: "Projects", id: "projects", icon: <FolderKanban  size={24} /> },
-  { name: "Experience", id: "experience", icon: <BadgeCheck  size={24} /> },
+  { name: "Skills", id: "skills", icon: <Hammer size={24} /> },
+  { name: "Projects", id: "projects", icon: <FolderKanban size={24} /> },
+  { name: "Experience", id: "experience", icon: <BadgeCheck size={24} /> },
   { name: "Education", id: "education", icon: <GraduationCap size={24} /> },
-  { name: "Contact", id: "contact", icon: <Mail  size={24} /> },
+  {
+    name: "Certificates",
+    id: "certificates",
+    icon: <Badge size={24} />,
+  },
+  { name: "Contact", id: "contact", icon: <Mail size={24} /> },
 ];
 
 export interface SideProps {
-    activeSection: string;
-    setActiveSection: (id: string) => void;
+  activeSection: string;
+  setActiveSection: (id: string) => void;
 }
-
 
 // Section content mapping
 const sectionMap: Record<string, React.ReactNode> = {
   skills: <Skills />,
-  projects: <Projects/>,
+  projects: <Projects />,
   experience: <WorkExperienceTimeline />,
   education: <Educations />,
+  certificates: <Certificates />,
   contact: <Contacts />,
 };
 

@@ -58,7 +58,6 @@ const contacts = [
 ];
 
 const Contacts = React.forwardRef<HTMLElement>((_, ref) => {
-
   const [copiedIndex, setCopiedIndex] = useState<number | null>(null);
 
   const handleCopy = (value: string, index: number) => {

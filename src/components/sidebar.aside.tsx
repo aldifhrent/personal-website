@@ -7,7 +7,7 @@ export default function SidebarAside({
   setActiveSection,
 }: SideProps) {
   return (
-    <aside className="hidden md:block md:w-fit">
+    <aside className="hidden lg:block md:w-fit">
       <nav
         className="sticky top-6 flex flex-col gap-2 outline rounded-md p-4 
                    min-h-[250px] items-stretch justify-center mx-auto"

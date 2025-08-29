@@ -16,7 +16,7 @@ export function ModeToggle() {
     <div>
       <div className="flex justify-between">
         <div>
-          <h1 className="text-black dark:text-white font-semibold underline underline-offset-4">fhr.</h1>
+          <h1 className="text-black dark:text-white font-semibold underline underline-offset-4 text-md">fhr.</h1>
         </div>
         <div>
           <Button variant="outline" size="icon" onClick={toggleTheme}>
