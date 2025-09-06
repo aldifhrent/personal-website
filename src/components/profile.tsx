@@ -45,8 +45,8 @@ export default function Profile() {
               src="/profile.png"
               alt="Aldi Ahmad Fahrizi Ilmawan"
               className="w-full h-full object-cover"
-              width={124}
-              height={124}
+              width={130}
+              height={130}
               priority
             />
           </div>

@@ -74,7 +74,7 @@ const Contacts = React.forwardRef<HTMLElement>((_, ref) => {
   };
 
   return (
-    <section className="" id="contact" ref={ref}>
+    <section className="" id="contacts" ref={ref}>
       <div className="container mx-auto"> 
           <h2 className="text-lg font-bold text-gray-800 dark:text-gray-200 font-mono">
             Contacts

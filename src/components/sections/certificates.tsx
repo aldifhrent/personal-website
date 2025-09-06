@@ -1,41 +1,57 @@
+"use client";
+
+import React from "react";
+import { motion } from "framer-motion";
+
+interface Certificate {
+  title: string;
+  issuer: string;
+  date: string;
+  link?: string;
+}
+
 export default function Certificates() {
-  const certificates = [
+  const certificates: Certificate[] = [
     {
-      title: "Quality Assurance Engineer",
+      title: "Quality Assurance Engineer Program",
       issuer: "Purwadhika Digital Technology School",
       date: "Jun – Aug 2025",
       link: "",
     },
-    // {
-    //   title: "Software Testing Fundamentals",
-    //   issuer: "Coursera",
-    //   date: "2025",
-    //   // link: null  // contoh kalau ga ada link
-    // },
-    // {
-    //   title: "Automation Testing with Selenium",
-    //   issuer: "Udemy",
-    //   date: "2025",
-    //   link: "https://example.com/certificate-udemy.pdf",
-    // },
+    {
+      title: "Junior Web Developer",
+      issuer: "Badan Nasional Sertifikasi Profesi (BNSP)",
+      date: "2024 - 2027",
+      link: "https://drive.google.com/file/d/1x7kzrzxjHGyJJsvmDUmNxFTpEGVGElH_/view?usp=sharing",
+    },
   ];
 
   return (
-    <section id="certificates" className="">
-      <div className="container">
-        <h2 className="text-lg md:text-lg font-bold mb-6">
+    <section id="certificates">
+      <motion.div
+        className="container"
+        initial={{ opacity: 0, y: 40 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.6, ease: [0.25, 0.1, 0.25, 1] }}
+      >
+        <h2 className="text-lg md:text-lg font-bold mb-6 font-mono">
           Certificates & Training
         </h2>
+
         <ul className="space-y-4">
           {certificates.map((cert, idx) => {
             const content = (
               <>
-                <h3 className="text-lg font-semibold text-gray-900 dark:text-gray-100 
-                               hover:text-blue-600 dark:hover:text-blue-400 transition-colors">
+                <h3
+                  className="text-lg font-semibold text-gray-900 dark:text-gray-100 
+                             hover:text-blue-600 dark:hover:text-blue-400 transition-colors"
+                >
                   {cert.title}
                 </h3>
                 <p className="text-sm text-gray-600 dark:text-gray-400 mt-1">
-                  <span className="font-medium">{cert.issuer}</span> • {cert.date}
+                  <span className="font-medium">{cert.issuer}</span> •{" "}
+                  {cert.date}
                 </p>
                 {cert.link && (
                   <span className="inline-block mt-2 text-sm text-blue-600 dark:text-blue-400 hover:underline">
@@ -69,7 +85,7 @@ export default function Certificates() {
             );
           })}
         </ul>
-      </div>
+      </motion.div>
     </section>
   );
 }

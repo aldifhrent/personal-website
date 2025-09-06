@@ -30,7 +30,7 @@ export const menu = [
     id: "certificates",
     icon: <Badge size={24} />,
   },
-  { name: "Contact", id: "contact", icon: <Mail size={24} /> },
+  { name: "Contacts", id: "contacts", icon: <Mail size={24} /> },
 ];
 
 export interface SideProps {
@@ -45,7 +45,7 @@ const sectionMap: Record<string, React.ReactNode> = {
   experience: <WorkExperienceTimeline />,
   education: <Educations />,
   certificates: <Certificates />,
-  contact: <Contacts />,
+  contacts: <Contacts />,
 };
 
 export default function SidebarMenu() {
