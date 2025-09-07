@@ -3,30 +3,14 @@
 import { ChevronRight, Github, Linkedin, Mail, Phone } from "lucide-react";
 import Link from "next/link";
 import React, { useState } from "react";
-import { toast } from "sonner"
-
-const handleCopy = (value: string | null | undefined) => {
-  if (!value) {
-    toast("No credential ID to copy");
-    return;
-  }
-
-  navigator.clipboard
-    .writeText(value)
-    .then(() => {
-      toast("Copied to clipboard");
-    })
-    .catch((err) => {
-      console.error("Failed to copy credential ID: ", err);
-    });
-};
+import { toast } from "sonner";
 
 const contacts = [
   {
     icon: Mail,
     label: "Email",
     value: "aldifahriziilmawan@gmail.com",
-    onClick: () => handleCopy("aldifahriziilmawan@gmail.com"),
+    action: "copy",
     color:
       "text-red-600 hover:text-red-700 dark:text-red-400 dark:hover:text-red-300",
   },
@@ -42,8 +26,8 @@ const contacts = [
     icon: Phone,
     label: "Phone",
     value: "+62 822-1871-8161",
-    onClick: () => handleCopy("+6282218718161"),
     href: "https://wa.me/+6282218718161",
+    action: "copy",
     color:
       "text-green-600 hover:text-green-700 dark:text-green-400 dark:hover:text-green-300",
   },
@@ -64,7 +48,7 @@ const Contacts = React.forwardRef<HTMLElement>((_, ref) => {
     navigator.clipboard
       .writeText(value)
       .then(() => {
-        toast(value)
+        toast("Copied to clipboard");
         setCopiedIndex(index);
         setTimeout(() => setCopiedIndex(null), 2000);
       })
@@ -74,19 +58,20 @@ const Contacts = React.forwardRef<HTMLElement>((_, ref) => {
   };
 
   return (
-    <section className="" id="contacts" ref={ref}>
-      <div className="container mx-auto"> 
-          <h2 className="text-lg font-bold text-gray-800 dark:text-gray-200 font-mono">
-            Contacts
-          </h2>
-        <div className="grid gap-2 mt-3">
+    <section id="contacts" ref={ref}>
+      <div className="container mx-auto px-4">
+        <h2 className="mb-6 font-mono text-lg font-bold text-gray-800 dark:text-gray-200">
+          Contacts
+        </h2>
+
+        <div className="grid gap-2">
           {contacts.map((contact, index) => {
             const Icon = contact.icon;
 
             const content = (
               <div
                 className={`group flex items-center gap-3 p-3 rounded-lg hover:bg-gray-50 dark:hover:bg-gray-800 transition-all duration-200 ${
-                  contact.onClick || !contact.href ? "cursor-pointer" : ""
+                  contact.action === "copy" ? "cursor-pointer" : ""
                 }`}
               >
                 <Icon
@@ -111,19 +96,18 @@ const Contacts = React.forwardRef<HTMLElement>((_, ref) => {
               </div>
             );
 
-            return contact.href ? (
-              <Link key={index} href={contact.href} target="_blank">
-                {content}
-              </Link>
-            ) : (
+            if (contact.href && contact.action !== "copy") {
+              return (
+                <Link key={contact.label} href={contact.href} target="_blank">
+                  {content}
+                </Link>
+              );
+            }
+
+            return (
               <button
-                key={index}
+                key={contact.label}
                 onClick={() => handleCopy(contact.value, index)}
-                role="button"
-                tabIndex={0}
-                onKeyDown={(e) => {
-                  if (e.key === "Enter") handleCopy(contact.value, index);
-                }}
                 className="w-full text-left"
               >
                 {content}

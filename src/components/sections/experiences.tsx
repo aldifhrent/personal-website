@@ -25,17 +25,17 @@ const workExperiences = [
 
 export default function WorkExperienceTimeline() {
   return (
-    <section className="">
+    <section className="container mx-auto px-4" id="work-experiences">
       <motion.div
-        className=""
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
+        initial={{ opacity: 0, y: 30 }}
+        animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.8 }}
       >
-  <h2 className="text-lg font-bold text-gray-800 dark:text-gray-200 mb-3 font-mono">
-            Work Experiences
-          </h2>
-        <ol className="relative border-l border-gray-300 dark:border-gray-700 space-y-12">
+        <h2 className="mb-6 font-mono text-lg font-bold text-gray-800 dark:text-gray-200">
+          Work Experiences
+        </h2>
+
+        <ol className="relative space-y-12 border-l border-gray-300 dark:border-gray-700">
           {workExperiences.map((work, index) => (
             <WorkExperienceCard key={work.id} {...work} index={index} />
           ))}

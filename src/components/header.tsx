@@ -4,6 +4,7 @@ import * as React from "react";
 import { Moon, Sun } from "lucide-react";
 import { useTheme } from "next-themes";
 import { Button } from "@/components/ui/button";
+import Link from "next/link";
 
 export function ModeToggle() {
   const { theme, setTheme } = useTheme();
@@ -16,7 +17,7 @@ export function ModeToggle() {
     <div>
       <div className="flex justify-between">
         <div>
-          <h1 className="text-black dark:text-white font-semibold underline underline-offset-4 text-md">fhr.</h1>
+          <Link href='/' className="text-black dark:text-white font-semibold underline underline-offset-4 text-md hover:cursor-pointer">fhr.</Link>
         </div>
         <div>
           <Button variant="outline" size="icon" onClick={toggleTheme}>

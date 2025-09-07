@@ -27,15 +27,14 @@ export default function Certificates() {
   ];
 
   return (
-    <section id="certificates">
+    <section id="certificates" className="container mx-auto px-4">
       <motion.div
-        className="container"
         initial={{ opacity: 0, y: 40 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
         transition={{ duration: 0.6, ease: [0.25, 0.1, 0.25, 1] }}
       >
-        <h2 className="text-lg md:text-lg font-bold mb-6 font-mono">
+        <h2 className="mb-6 font-mono text-lg font-bold text-gray-800 dark:text-gray-200">
           Certificates & Training
         </h2>
 
@@ -44,17 +43,16 @@ export default function Certificates() {
             const content = (
               <>
                 <h3
-                  className="text-lg font-semibold text-gray-900 dark:text-gray-100 
+                  className="text-base font-semibold text-gray-900 dark:text-gray-100 
                              hover:text-blue-600 dark:hover:text-blue-400 transition-colors"
                 >
                   {cert.title}
                 </h3>
                 <p className="text-sm text-gray-600 dark:text-gray-400 mt-1">
-                  <span className="font-medium">{cert.issuer}</span> •{" "}
-                  {cert.date}
+                  <span className="font-medium">{cert.issuer}</span> • {cert.date}
                 </p>
                 {cert.link && (
-                  <span className="inline-block mt-2 text-sm text-blue-600 dark:text-blue-400 hover:underline">
+                  <span className="inline-block mt-2 text-sm font-medium text-blue-600 dark:text-blue-400 hover:underline">
                     View Certificate
                   </span>
                 )}

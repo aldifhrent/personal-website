@@ -1,8 +1,11 @@
-export type Project = {
-  id: string; // wajib buat dynamic route
+export interface Project {
+  id: string;
   title: string;
   description: string;
-  link?: string;
-  techStack?: string[];
-  details?: string; // optional: untuk page detail
-};
+  link: string;
+  techStack: string[];
+  details: string;
+  status: "progress" | "finished";
+  planning?: boolean;
+  date?: string;
+}
