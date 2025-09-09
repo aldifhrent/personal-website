@@ -4,11 +4,10 @@ import { FaLinkedin, FaGithub } from "react-icons/fa";
 export default function Footer() {
   return (
     <footer className="mt-10 border-t border-gray-300 dark:border-gray-700 text-sm">
-      <div className=" mx-auto px-4 py-6 flex flex-col md:flex-row justify-between items-center gap-4">
-        
+      <div className="max-w-5xl mx-auto px-4 py-6 flex flex-col md:flex-row md:justify-between items-center gap-4 text-center">
         {/* Copyright */}
         <p
-          className="font-bold text-gray-700 dark:text-gray-300 whitespace-nowrap text-center"
+          className="font-bold text-gray-700 dark:text-gray-300"
           style={{ fontFamily: "'Courier New', Courier, monospace" }}
         >
           © {new Date().getFullYear()} - Aldi Ahmad Fahrizi Ilmawan

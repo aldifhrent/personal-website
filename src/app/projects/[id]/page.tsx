@@ -13,7 +13,9 @@ export default function ProjectDetail({
 }: {
   params: Promise<{ id: string }>;
 }) {
+  // ✅ unwrap params pakai React.use()
   const { id } = use(params);
+
   const index = projectsData.findIndex((p) => p.id === id);
   const project = projectsData[index];
   if (!project) return notFound();
@@ -27,8 +29,7 @@ export default function ProjectDetail({
       <nav className="container mx-auto px-4 pt-6">
         <Link
           href="/#projects"
-          scroll={true}
-  replace
+          replace
           className="inline-flex items-center text-sm font-mono text-gray-500 dark:text-gray-400 hover:text-blue-600 dark:hover:text-blue-400 transition-colors"
         >
           ← Back to Projects
@@ -58,6 +59,7 @@ export default function ProjectDetail({
                 href={project.link}
                 target="_blank"
                 rel="noopener noreferrer"
+                aria-label={`View ${project.title} repository`}
                 className="inline-flex items-center gap-2 px-5 py-2 text-sm font-mono rounded-md bg-blue-600 text-white hover:bg-blue-700 dark:bg-blue-500 dark:hover:bg-blue-600 transition-colors shadow-sm"
               >
                 <ExternalLink size={16} />
@@ -69,7 +71,7 @@ export default function ProjectDetail({
           {/* Tech Stack */}
           {project.techStack && (
             <section>
-              <h2 className="text-lg font-semibold mb-3 font-mono">
+              <h2 className="text-lg font-semibold mb-6 font-mono">
                 Tech Stack
               </h2>
               <div className="flex flex-wrap gap-2">
@@ -88,7 +90,7 @@ export default function ProjectDetail({
           {/* Details */}
           {project.details && (
             <section>
-              <h2 className="text-lg font-semibold mb-4 font-mono">
+              <h2 className="text-lg font-semibold mb-6 font-mono">
                 Project Details
               </h2>
               <div className="prose dark:prose-invert max-w-none leading-relaxed space-y-4 prose-pre:bg-gray-100 dark:prose-pre:bg-gray-800 prose-pre:p-4 prose-pre:rounded-lg">

@@ -11,8 +11,8 @@ export default function Home() {
       <div className="container mx-auto p-4 w-full ">
         <ModeToggle/>
       </div>
-      <div className="flex-grow pb-20 md:pb-0">
-        
+      <div className="flex flex-col md:pb-0">
+
         <Profile />
         <div className="flex flex-col">
           <SidebarMenu />

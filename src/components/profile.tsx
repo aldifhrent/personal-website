@@ -26,7 +26,7 @@ export default function Profile() {
   }, [summaries]);
 
   return (
-    <section className="py-8 bg-white dark:bg-black">
+    <section className="xl:py-8 bg-white dark:bg-black">
       <motion.div
         className="container mx-auto px-4 w-full"
         initial={{ opacity: 0 }}
