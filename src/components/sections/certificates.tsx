@@ -16,7 +16,7 @@ export default function Certificates() {
       title: "Quality Assurance Engineer Program",
       issuer: "Purwadhika Digital Technology School",
       date: "Jun – Aug 2025",
-      link: "",
+      link: "https://drive.google.com/drive/folders/1kxEqxVliAi7wTPSGWlrMiGztjvvPhCUo?usp=sharing",
     },
     {
       title: "Junior Web Developer",
