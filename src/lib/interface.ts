@@ -5,7 +5,7 @@ export interface Project {
   link: string;
   techStack: string[];
   details: string;
-  status: "progress" | "finished";
+  status: "progress" | "finished" | "planning";
   planning?: boolean;
   date?: string;
 }

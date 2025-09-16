@@ -18,11 +18,13 @@ export default function Profile() {
     []
   );
 
-  const [randomSummary, setRandomSummary] = useState(summaries[0]); // default aman
+  const [randomSummary, setRandomSummary] = useState(summaries[0] ?? "");
 
   useEffect(() => {
-    const pick = summaries[Math.floor(Math.random() * summaries.length)];
-    setRandomSummary(pick);
+    if (summaries.length > 0) {
+      const pick = summaries[Math.floor(Math.random() * summaries.length)];
+      setRandomSummary(pick);
+    }
   }, [summaries]);
 
   return (
@@ -34,7 +36,7 @@ export default function Profile() {
         transition={{ duration: 0.6 }}
       >
         <motion.div
-          className="flex flex-col xl:flex-row items-center  gap-10 mx-auto"
+          className="flex flex-col xl:flex-row items-center gap-10 mx-auto"
           initial={{ opacity: 0, y: -20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
@@ -52,17 +54,20 @@ export default function Profile() {
           </div>
 
           {/* Konten Teks */}
-          <div className="flex flex-col items-center xl:items-start text-center  mt-2 xl:text-left">
+          <div className="flex flex-col items-center xl:items-start text-center mt-2 xl:text-left">
             <HyperText
-              className="text-4xl md:text-6xl"
+              as="h1"
+              className="text-4xl md:text-6xl font-bold"
               duration={1000}
-              animateOnHover={true}
+              animateOnHover
             >
               Aldi Ahmad Fahrizi Ilmawan
             </HyperText>
+
             <QABeam />
+
             <motion.p
-              className="text-md md:text-md mt-4 text-gray-600 dark:text-gray-300 text-center xl:text-left"
+              className="text-md mt-4 text-gray-600 dark:text-gray-300 text-center xl:text-left"
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.7, delay: 0.4 }}
@@ -81,25 +86,29 @@ export default function Profile() {
               }}
             >
               {/* Hire Me */}
-              <motion.div className="flex items-center gap-2 px-4 py-1.5 rounded-full bg-green-50 dark:bg-green-900 border border-green-200 dark:border-green-700 shadow-sm hover:shadow-md transition">
+              <Link
+                href="/hire-me"
+                className="flex items-center gap-2 px-4 py-1.5 rounded-full 
+                           bg-green-50 dark:bg-green-900 border border-green-200 
+                           dark:border-green-700 shadow-sm hover:shadow-md transition 
+                           text-green-800 dark:text-green-100 font-mono tracking-tight"
+              >
                 <span className="w-2.5 h-2.5 bg-green-600 rounded-full animate-pulse" />
-                <Link
-                  href="/hire-me"
-                  className="text-sm font-semibold text-green-800 dark:text-green-100 font-mono tracking-tight"
-                >
-                  Hire Me — Open to Work
-                </Link>
-              </motion.div>
+                Hire Me — Open to Work
+              </Link>
 
               {/* Download CV */}
-              <motion.a
+              <a
                 href="/CV_ALDI%20AHMAD%20FAHRIZI%20ILMAWAN.pdf"
                 download
-                className="flex items-center gap-2 px-4 py-1.5 rounded-full bg-blue-50 dark:bg-blue-900 border border-blue-200 dark:border-blue-700 shadow-sm hover:shadow-md transition text-blue-800 dark:text-blue-100 font-mono"
+                className="flex items-center gap-2 px-4 py-1.5 rounded-full 
+                           bg-blue-50 dark:bg-blue-900 border border-blue-200 
+                           dark:border-blue-700 shadow-sm hover:shadow-md transition 
+                           text-blue-800 dark:text-blue-100 font-mono"
               >
                 <Download className="w-4 h-4" />
                 CV
-              </motion.a>
+              </a>
             </motion.div>
           </div>
         </motion.div>

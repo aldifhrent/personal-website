@@ -1,6 +1,5 @@
 "use client";
 
-import React from "react";
 import { motion } from "framer-motion";
 
 interface Certificate {
@@ -40,46 +39,52 @@ export default function Certificates() {
 
         <ul className="space-y-4">
           {certificates.map((cert, idx) => {
-            const content = (
-              <>
-                <h3
-                  className="text-base font-semibold text-gray-900 dark:text-gray-100 
-                             hover:text-blue-600 dark:hover:text-blue-400 transition-colors"
+            const CardContent = (
+              <div className="relative p-5 rounded-xl border border-gray-200 dark:border-gray-700
+                              bg-gradient-to-br from-white to-gray-50 dark:from-gray-800 dark:to-gray-900
+                              hover:shadow-lg hover:border-blue-400 dark:hover:border-blue-500
+                              transition-all duration-300">
+                {/* Badge date */}
+                <time
+                  className="absolute top-4 right-4 text-xs px-2 py-0.5 rounded-full
+                             bg-blue-100 text-blue-700 dark:bg-blue-900 dark:text-blue-300"
+                  dateTime={cert.date}
                 >
+                  {cert.date}
+                </time>
+
+                <h3 className="text-base font-semibold text-gray-900 dark:text-gray-100 
+                               group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors">
                   {cert.title}
                 </h3>
                 <p className="text-sm text-gray-600 dark:text-gray-400 mt-1">
-                  <span className="font-medium">{cert.issuer}</span> • {cert.date}
+                  {cert.issuer}
                 </p>
-                {cert.link && (
-                  <span className="inline-block mt-2 text-sm font-medium text-blue-600 dark:text-blue-400 hover:underline">
-                    View Certificate
-                  </span>
-                )}
-              </>
+              </div>
             );
 
             return (
-              <li
+              <motion.li
                 key={idx}
-                className="p-5 rounded-xl border border-gray-200 dark:border-gray-700
-                           bg-gradient-to-br from-white to-gray-50 dark:from-gray-800 dark:to-gray-900
-                           hover:shadow-lg hover:border-blue-400 dark:hover:border-blue-500
-                           transition-all duration-300"
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5, delay: idx * 0.1 }}
+                whileHover={{ scale: 1.02 }}
               >
                 {cert.link ? (
                   <a
                     href={cert.link}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="block"
+                    className="block group"
                   >
-                    {content}
+                    {CardContent}
                   </a>
                 ) : (
-                  content
+                  CardContent
                 )}
-              </li>
+              </motion.li>
             );
           })}
         </ul>

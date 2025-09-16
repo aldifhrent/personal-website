@@ -32,25 +32,27 @@ const infoItems = [
     title: "Remote Ready",
     desc: "Open to remote/hybrid work",
   },
+{
+  icon: Briefcase,
+  title: "QA Bootcamp Graduate",
+  desc: "Hands-on experience through real-world projects",
+},
+{
+  icon: FlaskConical,
+  title: "Manual + Automation",
+  desc: "Hands-on with Playwright, Katalon, and Postman (UI + API testing)",
+},
+
   {
-    icon: Briefcase,
-    title: "QA Bootcamp",
-    desc: "Learning by doing real projects",
-  },
-  {
-    icon: FlaskConical,
-    title: "Manual + Automation",
-    desc: "Hands-on with tools like Playwright & Katalon",
-  },
-  {
-    icon: Mail,
-    title: "QA Intern Roles",
-    desc: "Eager to gain real-world testing experience",
-  },
+  icon: Mail,
+  title: "Junior QA Engineer",
+  desc: "Ready to contribute on real projects and grow with the team",
+}
+
 ];
 
 const expertiseData = {
-  "Testing Methods": "Manual, Regression, Exploratory (learning phase)",
+"Testing Methods": "Manual, Regression, Exploratory Testing",
   Tools: "Katalon, Playwright, Postman, Jira, Git",
   Automation: "Basic UI + functional tests using Playwright & Katalon",
   "Soft Skills": "Detail-oriented, Communicative, Curious",
@@ -86,9 +88,10 @@ export default function HireMePage() {
         className="text-center"
       >
         <h1 className="text-4xl font-bold mb-2">Let’s Work Together</h1>
-        <p className="text-gray-600 dark:text-gray-300 max-w-xl mx-auto mb-6">
-          Junior QA Engineer passionate about product quality. Let’s build better software together.
-        </p>
+<p className="text-gray-600 dark:text-gray-300 max-w-xl mx-auto mb-6">
+  Junior QA Engineer skilled in manual & automation testing (Playwright, Katalon, Postman). Passionate about delivering high-quality software and eager to contribute in real projects.
+</p>
+
 
         {/* Contact Links */}
         <motion.div
