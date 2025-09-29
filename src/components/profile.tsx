@@ -42,13 +42,12 @@ export default function Profile() {
           transition={{ duration: 0.8 }}
         >
           {/* Foto Profil */}
-          <div className="rounded-full overflow-hidden border-2 border-gray-300 dark:border-gray-600 mt-2">
+          <div className="w-56 aspect-square rounded-full overflow-hidden border-2 border-gray-300 dark:border-gray-600 mt-2 relative">
             <Image
               src="/profile.png"
               alt="Aldi Ahmad Fahrizi Ilmawan"
-              className="w-full h-full object-cover"
-              width={130}
-              height={130}
+              className="object-cover"
+              fill
               priority
             />
           </div>
