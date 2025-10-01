@@ -75,7 +75,7 @@ const categoryColors: Record<string, { light: string; dark: string }> = {
 export default function Skills() {
   return (
     <TooltipProvider>
-      <section className="space-y-8 w-full">
+      <section className="space-y-12 w-full ">
         {/* TECHNICAL SKILLS */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}
