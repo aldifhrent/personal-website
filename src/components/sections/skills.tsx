@@ -12,8 +12,6 @@ import { motion } from "framer-motion";
 const skills = [
   { name: "JavaScript", category: "Programming Languages" },
   { name: "TypeScript", category: "Programming Languages" },
-  { name: "Next.js", category: "Frontend Frameworks" },
-  { name: "React.js", category: "Frontend Frameworks" },
   { name: "Git", category: "Version Control" },
   { name: "Postman", category: "API Testing Tools" },
   { name: "Playwright", category: "Automation Tools" },

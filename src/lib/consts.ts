@@ -55,30 +55,30 @@ Covers login, product search, cart, and checkout flows.
     planning: false,
     date: "2025-08-10",
   },
-  {
-    id: "api-testing-fakestoreapi",
-    title: "API Testing - FakeStoreAPI",
-    description:
-      "Automated API testing project for FakeStoreAPI using Playwright and TypeScript.",
-    link: "https://github.com/aldifhrent/api-testing-fakestoreapi",
-    techStack: ["Playwright", "TypeScript", "GitHub Actions"],
-    details: `
-Automated API testing project for [FakeStoreAPI](https://fakestoreapi.com/) built with Playwright and TypeScript.  
-Focused on validating core e-commerce endpoints such as products, carts, and users with reusable API wrapper classes.
+//   {
+//     id: "api-testing-fakestoreapi",
+//     title: "API Testing - FakeStoreAPI",
+//     description:
+//       "Automated API testing project for FakeStoreAPI using Playwright and TypeScript.",
+//     link: "https://github.com/aldifhrent/api-testing-fakestoreapi",
+//     techStack: ["Playwright", "TypeScript", "GitHub Actions"],
+//     details: `
+// Automated API testing project for [FakeStoreAPI](https://fakestoreapi.com/) built with Playwright and TypeScript.  
+// Focused on validating core e-commerce endpoints such as products, carts, and users with reusable API wrapper classes.
 
-**Highlights**:
-- Modular API wrapper classes for cleaner and maintainable code  
-- Test lifecycle management with Playwright fixtures  
-- Continuous Integration with GitHub Actions  
-- HTML & Allure reports for better test visibility  
-- 80%+ test coverage across endpoints
+// **Highlights**:
+// - Modular API wrapper classes for cleaner and maintainable code  
+// - Test lifecycle management with Playwright fixtures  
+// - Continuous Integration with GitHub Actions  
+// - HTML & Allure reports for better test visibility  
+// - 80%+ test coverage across endpoints
 
-**Result**:
-- Verified reliability and consistency of 15+ endpoints  
-- Improved developer feedback loop with automated CI/CD pipeline
-    `,
-    status: "finished",
-    planning: false,
-    date: "2025-09-01",
-  },
+// **Result**:
+// - Verified reliability and consistency of 15+ endpoints  
+// - Improved developer feedback loop with automated CI/CD pipeline
+//     `,
+//     status: "finished",
+//     planning: false,
+//     date: "2025-09-01",
+//   },
 ];
